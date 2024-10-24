@@ -3,9 +3,10 @@ import com.web.entity.Product;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Query;
 
-public interface ProductRepository extends JpaRepository<Product,Long> {
+public interface ProductRepository extends JpaRepository<Product,Long>, JpaSpecificationExecutor<Product> {
 
     @Query("select p from Product p where " +
             "(p.name like ?1 or p.category.name like ?1 or p.tradeMark.name like ?1 or p.code like ?1) and p.deleted <> true")
@@ -55,4 +56,7 @@ public interface ProductRepository extends JpaRepository<Product,Long> {
     @Query("select p from Product p where p.deleted <> true and p.name like ?1 and p.price >= ?2 and p.price <= ?3 and " +
             "p.tradeMark.name = ?4 and p.category.id = ?5")
     Page<Product> locSanPham(String search, Double small, Double large, String trademark, Long idCategory,Pageable pageable);
+
+    @Query("select p from Product p where p.tradeMark.id = ?1 and (p.deleted = false or p.deleted is null) ")
+    Page<Product> sanPhamByThuongHieu(Long trademark, Pageable pageable);
 }

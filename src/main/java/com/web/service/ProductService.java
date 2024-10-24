@@ -2,6 +2,7 @@ package com.web.service;
 
 import com.web.dto.request.ColorRequest;
 import com.web.dto.request.ProductRequest;
+import com.web.dto.response.ProductSpecification;
 import com.web.entity.*;
 import com.web.exception.MessageException;
 import com.web.mapper.ProductMapper;
@@ -14,6 +15,7 @@ import org.springframework.stereotype.Repository;
 
 import java.sql.Date;
 import java.sql.Time;
+import java.util.List;
 import java.util.Optional;
 
 @Component
@@ -227,4 +229,13 @@ public class ProductService {
         return page;
     }
 
+    public Page<Product> findProductsByCriteria(List<Long> categoryIds, List<Long> trademarkIds, Double minPrice, Double maxPrice, Pageable pageable) {
+        ProductSpecification spec = new ProductSpecification(categoryIds, trademarkIds, minPrice, maxPrice);
+        return productRepository.findAll(spec, pageable);
+    }
+
+    public Page<Product> sanPhamByThuongHieu(Long trademark, Pageable pageable) {
+        Page<Product> page = productRepository.sanPhamByThuongHieu(trademark, pageable);
+        return page;
+    }
 }

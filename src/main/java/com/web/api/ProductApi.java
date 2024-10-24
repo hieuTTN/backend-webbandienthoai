@@ -1,6 +1,7 @@
 package com.web.api;
 
 import com.web.dto.request.ProductRequest;
+import com.web.dto.request.ProductSearch;
 import com.web.entity.Product;
 import com.web.mapper.ProductMapper;
 import com.web.service.ProductService;
@@ -87,14 +88,15 @@ public class ProductApi {
         return new ResponseEntity<>(response, HttpStatus.CREATED);
     }
 
-    @GetMapping("/public/loc-san-pham")
-    public ResponseEntity<?> locSanPham(@RequestParam(value = "trademark", required = false) String trademark,
-                                        @RequestParam(value = "search", required = false) String search,
-                                        @RequestParam(value = "idcategory", required = false) Long idcategory,
-                                        @RequestParam(value = "small", required = false) Double small,
-                                        @RequestParam(value = "large", required = false) Double large,
+    @GetMapping("/public/san-pham-by-thuong-hieu")
+    public ResponseEntity<?> locSanPham(@RequestParam(value = "trademark", required = false) Long trademark,
                                         Pageable pageable) {
-        Page<Product> response = productService.locSanPham(small, large,idcategory, trademark, search, pageable);
+        Page<Product> response = productService.sanPhamByThuongHieu(trademark, pageable);
         return new ResponseEntity<>(response, HttpStatus.CREATED);
+    }
+
+    @PostMapping("/public/search-full")
+    public Page<Product> getProductsByCriteria(@RequestBody ProductSearch search, Pageable pageable) {
+        return productService.findProductsByCriteria(search.getCategoryIds(), search.getTrademarkIds(), search.getMinPrice(), search.getMaxPrice(), pageable);
     }
 }
