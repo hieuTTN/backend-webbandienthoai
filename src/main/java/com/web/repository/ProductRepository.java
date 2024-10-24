@@ -59,4 +59,7 @@ public interface ProductRepository extends JpaRepository<Product,Long>, JpaSpeci
 
     @Query("select p from Product p where p.tradeMark.id = ?1 and (p.deleted = false or p.deleted is null) ")
     Page<Product> sanPhamByThuongHieu(Long trademark, Pageable pageable);
+
+    @Query("select p from Product p where (p.name like ?1 or p.tradeMark.name like ?1 or p.category.name like ?1) and (p.deleted = false or p.deleted is null) ")
+    Page<Product> sanPhamByParam(String s, Pageable pageable);
 }

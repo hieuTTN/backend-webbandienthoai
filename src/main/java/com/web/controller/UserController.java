@@ -23,9 +23,9 @@ public class UserController {
         return "user/dangky.html";
     }
 
-    @RequestMapping(value = {"/dangnhap"}, method = RequestMethod.GET)
-    public String dangnhap() {
-        return "user/dangnhap.html";
+    @RequestMapping(value = {"/login"}, method = RequestMethod.GET)
+    public String login() {
+        return "user/login.html";
     }
 
     @RequestMapping(value = {"/datlaimatkhau"}, method = RequestMethod.GET)
@@ -39,19 +39,19 @@ public class UserController {
     }
 
 
-    @RequestMapping(value = {"/diachi"}, method = RequestMethod.GET)
-    public String diachi() {
-        return "user/diachi.html";
-    }
-
     @RequestMapping(value = {"/giohang"}, method = RequestMethod.GET)
     public String giohang() {
         return "user/giohang.html";
     }
 
-    @RequestMapping(value = {"/index","/"}, method = RequestMethod.GET)
+    @RequestMapping(value = {"/index"}, method = RequestMethod.GET)
     public String index() {
         return "user/index.html";
+    }
+
+    @RequestMapping(value = {"/"}, method = RequestMethod.GET)
+    public String trangChu() {
+        return "redirect:/index";
     }
 
     @RequestMapping(value = {"/product"}, method = RequestMethod.GET)
@@ -72,16 +72,6 @@ public class UserController {
     @RequestMapping(value = {"/thanhcong"}, method = RequestMethod.GET)
     public String thanhcong() {
         return "user/thanhcong.html";
-    }
-
-    @RequestMapping(value = {"/thanhtoan"}, method = RequestMethod.GET)
-    public String thanhtoan() {
-        return "user/thanhtoan.html";
-    }
-
-    @RequestMapping(value = {"/timdonhang"}, method = RequestMethod.GET)
-    public String timdonhang() {
-        return "user/timdonhang.html";
     }
 
     @RequestMapping(value = {"/xacnhan"}, method = RequestMethod.GET)

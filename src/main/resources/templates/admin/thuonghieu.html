@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link href="css/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+
+    <script src="https://cdn.datatables.net/1.13.2/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.2/js/dataTables.bootstrap5.min.js"></script>
+    <link href="https://cdn.datatables.net/1.13.2/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.2/js/toastr.min.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/thuonghieu.js"></script>
+    <script>
+        window.onload = function() {
+            loadTrademark(0, "");
+        }
+    </script>
+</head>
+<body>
+    <div class="d-flex" id="wrapper">
+        <nav id="sidebar" class="bg-dark">
+        </nav>
+
+        <div id="page-content-wrapper" class="w-100">
+            <nav id='navbarmain' class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+            </nav>
+            <div class="container-fluid py-4" id='mainpageadmin'>
+                <div class="headerpageadmin d-flex justify-content-between align-items-center p-3 bg-light border">
+                    <strong class="text-left"><i class='fa fa-users'></i> Quản Lý Thương Hiệu</strong>
+                    <div class="search-wrapper d-flex align-items-center">
+                        <div class="search-container">
+                            <input onkeyup="loadTrademark(0,this.value)" id="searchtable" placeholder="tìm kiếm" class="form-control">
+                        </div>
+                        <a onclick="clearData()" data-bs-toggle="modal" data-bs-target="#addtk" href="#" class="btn btn-primary"><i class='fa fa-plus'></i></a>
+                    </div>
+                </div>
+
+                <div class="tablediv">
+                    <div class="headertable">
+                        <span class="lbtable">Danh sách danh mục</span>
+                    </div>
+                    <div class="divcontenttable">
+                        <table id="example" class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>id</th>
+                                    <th>Tên thương hiệu</th>
+                                    <th class="sticky-col">Hành động</th>
+                                </tr>
+                            </thead>
+                            <tbody id="listtrademark">
+                            </tbody>
+                        </table>
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination" id="pageable">
+                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<div class="modal fade" id="addtk" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="false">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Thêm cập nhật thương hiệu</h5> <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
+            <div class="modal-body row">
+                <form action="javascript:saveTrademark()" class="col-sm-6" style="margin: auto;">
+                    <label class="lb-form">Tên thương hiệu</label>
+                    <input id="idtrademark" type="hidden" class="form-control">
+                    <input id="trademarkname" type="text" class="form-control">
+                    <br>
+                    <button class="form-control btn btn-primary">Thêm/ cập nhật thương hiệu</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</html>

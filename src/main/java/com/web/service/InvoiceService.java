@@ -14,6 +14,7 @@ import com.web.momo.processor.QueryTransactionStatus;
 import com.web.repository.*;
 import com.web.utils.CommonPage;
 import com.web.utils.UserUtils;
+import com.web.vnpay.VNPayService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -65,6 +66,13 @@ public class InvoiceService {
     @Autowired
     private InvoiceMapper invoiceMapper;
 
+    @Autowired
+    private WardsRepository wardsRepository;
+
+    @Autowired
+    private VNPayService vnPayService;
+
+
     
     public InvoiceResponse create(InvoiceRequest invoiceRequest) {
         if(invoiceRequest.getPayType().equals(PayType.MOMO)){
@@ -86,18 +94,31 @@ public class InvoiceService {
                 throw new MessageException("Đơn hàng chưa được thanh toán");
             }
         }
-        if(invoiceRequest.getUserAddressId() == null){
-            throw new MessageException("user address id require");
+        if(invoiceRequest.getPayType().equals(PayType.VNPAY)){
+            if(invoiceRequest.getVnpOrderInfo() == null){
+                throw new MessageException("vnpay order infor require");
+            }
+            if(historyPayRepository.findByOrderIdAndRequestId(invoiceRequest.getVnpOrderInfo(), invoiceRequest.getVnpOrderInfo()).isPresent()){
+                throw new MessageException("Đơn hàng đã được thanh toán");
+            }
+            int paymentStatus = vnPayService.orderReturnByUrl(invoiceRequest.getUrlVnpay());
+            if(paymentStatus != 1){
+                throw new MessageException("Thanh toán thất bại");
+            }
         }
         Double totalAmount = cartService.totalAmountCart();
-
-
+        Wards wards = wardsRepository.findById(invoiceRequest.getWardId()).get();
         Invoice invoice = new Invoice();
         invoice.setCreatedDate(new Date(System.currentTimeMillis()));
         invoice.setCreatedTime(new Time(System.currentTimeMillis()));
         invoice.setNote(invoiceRequest.getNote());
+        invoice.setPhone(invoiceRequest.getPhone());
+        invoice.setAddress(invoiceRequest.getAddress());
+        invoice.setReceiverName(invoiceRequest.getReceiverName());
         invoice.setPayType(invoiceRequest.getPayType());
         invoice.setStatusInvoice(StatusInvoice.DANG_CHO_XAC_NHAN);
+        invoice.setWards(wards);
+        invoice.setUser(userUtils.getUserWithAuthority());
         if(invoiceRequest.getVoucherCode() != null){
             if(!invoiceRequest.getVoucherCode().equals("null") && !invoiceRequest.getVoucherCode().equals("")){
                 System.out.println("voucher use === "+invoiceRequest.getVoucherCode());
@@ -126,11 +147,17 @@ public class InvoiceService {
             }catch (Exception e){}
         }
 
-        if(invoiceRequest.getPayType().equals(PayType.MOMO)){
+        if(invoiceRequest.getPayType().equals(PayType.MOMO) || invoiceRequest.getPayType().equals(PayType.VNPAY)){
             HistoryPay historyPay = new HistoryPay();
             historyPay.setInvoice(result);
-            historyPay.setRequestId(invoiceRequest.getRequestIdMomo());
-            historyPay.setOrderId(invoiceRequest.getOrderIdMomo());
+            if(invoiceRequest.getPayType().equals(PayType.MOMO)){
+                historyPay.setRequestId(invoiceRequest.getRequestIdMomo());
+                historyPay.setOrderId(invoiceRequest.getOrderIdMomo());
+            }
+            if(invoiceRequest.getPayType().equals(PayType.VNPAY)){
+                historyPay.setRequestId(invoiceRequest.getVnpOrderInfo());
+                historyPay.setOrderId(invoiceRequest.getVnpOrderInfo());
+            }
             historyPay.setCreatedTime(new Time(System.currentTimeMillis()));
             historyPay.setCreatedDate(new Date(System.currentTimeMillis()));
             historyPay.setTotalAmount(totalAmount);
@@ -187,26 +214,17 @@ public class InvoiceService {
         if(invoice.isEmpty()){
             throw new MessageException("invoice id not found");
         }
-//        if(invoice.get().getPayType().equals(PayType.PAYMENT_MOMO)){
-//            throw new MessageException("Đơn hàng đã được thanh toán, không thể hủy");
-//        }
-//        Long idSt = invoice.get().getStatus().getId();
-//        if(idSt == StatusUtils.DA_GUI || idSt == StatusUtils.DA_NHAN || idSt == StatusUtils.DA_HUY || idSt == StatusUtils.KHONG_NHAN_HANG){
-//            throw new MessageException(invoice.get().getStatus().getName()+ " không thể hủy hàng");
-//        }
-//        invoice.get().setStatus(statusRepository.findById(StatusUtils.DA_HUY).get());
-//        Invoice result = invoiceRepository.save(invoice.get());
-//        List<InvoiceDetail> list  = invoiceDetailRepository.findByInvoiceId(invoiceId);
-//        for(InvoiceDetail i : list){
-//            i.getProductSize().setQuantity(i.getQuantity() + i.getProductSize().getQuantity());
-//            productSizeRepository.save(i.getProductSize());
-//        }
-//        InvoiceStatus invoiceStatus = new InvoiceStatus();
-//        invoiceStatus.setInvoice(invoice.get());
-//        invoiceStatus.setCreatedDate(new Date(System.currentTimeMillis()));
-//        invoiceStatus.setCreatedTime(new Time(System.currentTimeMillis()));
-//        invoiceStatus.setStatus(statusRepository.findById(StatusUtils.DA_HUY).get());
-//        invoiceStatusRepository.save(invoiceStatus);
+        if(!invoice.get().getPayType().equals(PayType.COD)){
+            throw new MessageException("Đơn hàng đã được thanh toán, không thể hủy");
+        }
+        invoice.get().setStatusInvoice(StatusInvoice.DA_HUY);
+        invoice.get().setStatusUpdateDate(new Timestamp(System.currentTimeMillis()));
+        Invoice result = invoiceRepository.save(invoice.get());
+        List<InvoiceDetail> list  = invoiceDetailRepository.findByInvoiceId(invoiceId);
+        for(InvoiceDetail i : list){
+            i.getProductColor().setQuantity(i.getQuantity() + i.getProductColor().getQuantity());
+            productColorRepository.save(i.getProductColor());
+        }
         return null;
     }
 

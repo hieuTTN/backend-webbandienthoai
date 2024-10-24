@@ -1,0 +1,1577 @@
+.dangnhapform{
+    margin-top: 0px;
+    background: #fff;
+    width: 100%;
+    min-height: 100px;
+    display: flex;
+    padding-top: 40px;
+}
+.divimglogin{
+    background: #fbe9e7;
+    width: 25%;
+    float: left;
+}
+.divimglogin img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.divctlogin{
+    width: 70%;
+    margin-left: 15%;
+    padding: 70px 150px;
+    border-radius: 15px;
+    -webkit-box-shadow: 0 0 10px #cfcfcf;
+        box-shadow: 0 0 10px #cfcfcf;
+}
+.labeldangnhap{
+    font-weight: bold;
+    font-size: 22px;
+    text-align: center;
+}
+.inputlogin{
+    margin-top: 5px;
+    display: block;
+    width: 100%;
+    background: #e5e5e5;
+    border-radius: 4px;
+    padding: 10px;
+    border: none;
+}
+.inputlogin:focus{
+    outline: none;
+}
+.lbform{
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+.btndangnhap{
+    background: transparent linear-gradient(180deg,#00917a 0%,#00483d 100%) 0% 0% no-repeat padding-box;
+    box-shadow: 0 4px 6px #00000029;
+    border-radius: 3px;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    margin-top: 30px;
+    width: 46%;
+    float: left;
+}
+.btndoimk{
+    background: transparent linear-gradient(180deg,#00917a 0%,#00483d 100%) 0% 0% no-repeat padding-box;
+    box-shadow: 0 4px 6px #00000029;
+    border-radius: 3px;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    margin-top: 30px;
+    width: 50%;
+}
+.btndangky{
+    background: #fff;
+    box-shadow: 0 4px 6px #00000029;
+    border-radius: 3px;
+    color: #000;
+    border: 2px solid black;
+    padding: 8px;
+    margin-top: 30px;
+    width: 46%;
+    float: left;
+    margin-left: 8%;
+}
+.lbquenmk{
+    float: right;
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin-top: 15px;
+}
+.parentlogingg{
+    width: 100%;
+    position: relative;
+    height: 80px;
+}
+.logindiv {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.quenmk{
+    text-align: center;
+    margin-top: 20px;
+    color: #a8a7a7;
+    text-decoration: none;
+    font-size: 13px;
+}
+.quenmk a{
+    color: #8c8b8b;
+    text-decoration: none;
+}
+#menumain{
+    background: #ff0000;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+.containercustom{
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+.sdtheader {
+    position: absolute;
+    left: 43px;
+    bottom: 5px;
+    color: #fff;
+    font-size: 12px;
+}
+.tagaheadersdt{
+    position: relative;
+}
+
+.itemiconheader {
+    display: table;
+    margin-left: 20px;
+}
+
+.icon, .txtheader {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.icon {
+    width: 35px;
+    height: 35px;
+    background: #fff;
+    border-radius: 50%;
+    position: relative;
+    padding-right: 10px; /* Thay vì margin-right */
+}
+
+.icon svg {
+    fill: #ff0000;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.txtheader {
+    padding-left: 10px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 15px;
+}
+.txtheader:hover{
+    color: #fff;
+}
+.text-bg{
+    display: block;
+    font-size: 16px;
+}
+.quantitycartheader {
+    position: absolute;
+    left: 13px;
+    z-index: 2;
+    color: #ff0000;
+    top: 8px;
+    font-size: 13px;
+    font-weight: bold;
+}
+.searchheader{
+    margin-left: 50px;
+    margin-right: 30px;
+    width: 100%;
+}
+.searchheader input:focus{
+    outline: none !important;
+    border: none !important;
+    box-shadow: none;
+}
+.listheadermenu{
+    flex-grow: 1;
+}
+.itemiconheader li{
+    list-style: none;
+}
+.maincontentweb{
+    background-color: #f6f6f6;
+    padding-top: 80px;
+}
+#carouselindex img,.carousel-item{
+    border-radius: 10px;
+}
+.bannerhot1 img{
+    width: 100%;
+    border-radius: 10px;
+}
+.bannerrighttopindex1{
+    margin-top: 15px;
+}
+.bannerrighttopindex img{
+    height: 110px;
+    object-fit: cover;
+}
+.bannerfoo img{
+    margin-top: 10px;
+}
+.danhmucleft{
+    background-color: #fff;
+    height: 100%;
+    display: flex;
+    flex-direction: column; /* Đặt hướng flex thành cột */
+    justify-content: space-between; /* Chia đều không gian giữa các phần tử */
+}
+.spdanhmucleft {
+    padding: 10px;
+}
+.danhmucnameleft{
+    color: #000;
+    text-decoration: none;
+    display: block;
+    border-bottom: 1px solid #e6e6e6;
+    padding-bottom: 3px;
+    font-weight: 450;
+    position: relative;
+}
+.iconmuitenphai{
+    font-size: 12px;
+    position: absolute;
+    right: 0;
+    font-weight: 100 !important;
+    color: #d4d4d4;
+}
+
+.danhmucnameleft:hover{
+    color: #fff;
+}
+.spdanhmucleft:hover{
+    background-color: #ff0000;
+    color: #fff !important;
+}
+.spdanhmucleft:hover .danhmucnameleft{
+    background-color: #ff0000;
+    color: #fff !important;
+    border-bottom: none;
+}
+
+.cat_item_store{
+    margin-top: 35px;
+}
+.cat-title {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    margin-top: 25px;
+}
+.cat-title-main {
+    position: relative;
+    color: #fff;
+    padding: 12px 15px 10px;
+    background: #dd0302;
+    padding: 12px 25px 12px 215px;
+    width: fit-content;
+    box-sizing: border-box;
+    font-weight: 700;
+    line-height: 1.1;
+    border-radius: 10px;
+    width: 510px;
+    text-align: left;
+    max-width: 100%;
+}
+.cat-title .cat-title-main {
+    float: left;
+}
+.cat_item_store .cat-title-main a {
+    text-transform: uppercase;
+    font-size: 28px;
+    margin: 0px;
+    color: #fff;
+    display: inline-block;
+}
+.cat-title .cat-title-main>a {
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 10px;
+    color: #fff;
+    transition: 0.5s;
+}
+.cat_item_store .cat-title-main a .icon_cat_menu {
+    position: absolute;
+    left: 15px;
+    background: url('/image/icon_dth.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 193px;
+    height: 51px;
+    top: -10px;
+    box-sizing: border-box;
+    padding-left: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cat-title .cat-title-main>a span {
+    color: black;
+    padding-left: 13px;
+}
+.newitem{
+    height: 100%;
+}
+.linkpro {
+    text-decoration: none;
+    color: #000;
+}
+.singleproduct{
+    margin-top: 15px;
+    background-color: #fff;
+    padding: 5px 10px 5px 10px;
+    width: calc(1 / 5* 100% -(1 - 1 / 5)* 10px);
+    background: #fff;
+    box-shadow: 0 4px 6px #00000029;
+    border-radius: 8px;
+    text-align: center;
+}
+.image-container {
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    overflow: hidden;
+}
+.productimg{
+    width: auto;
+    height: 180px;
+    object-fit: cover;
+    max-width: 100%;
+}
+.productname{
+    text-decoration: none;
+    text-align: center;
+    color: #000;
+    font-weight: bold;
+    display: block;
+    font-size: 0.9rem;
+    overflow: hidden;
+   display: -webkit-box;
+   -webkit-line-clamp: 2; /* number of lines to show */
+           line-clamp: 2; 
+   -webkit-box-orient: vertical;
+}
+.contentsinglepro{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.priceproduct{
+    text-align: center;
+}
+.newprice{
+    font-size: 16px;
+    color: #fd475a;
+    text-align: center;
+}
+.oldprice{
+    text-decoration: line-through;
+    font-size: 0.8rem;
+    color: #333;
+}
+.block{
+    display: block;
+}
+.xemtatca{
+    position: relative;
+    height: 50px;
+    margin-top: 15px;
+}
+.xemtatcabtn{
+    position: absolute;
+    width: 150px;
+    left: 0;
+    right: 0;
+    margin-left: auto; 
+    margin-right: auto; 
+    border: 1px solid #ccc;
+    padding: 13px 15px;
+    border-radius: 8px;
+    background-color: #fff;
+}
+.container-footer{
+    background-color: #ff0000;
+    border-radius: 10px;
+}
+#footer a,#footer p,#footer h6,#footer div{
+    color: #fff !important;
+    text-decoration: none;
+}
+.diachicuahang span{
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+.iconstar{
+    width: 60%;
+}
+.listblogindex{
+    margin-top: 30px;
+}
+.singleblogindex{
+    margin-top: 15px;
+}
+.singleblogindex{
+    border-radius: 10px;
+    background: #e6e6e6;
+}
+.singleblogindex img{
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.divsingleblogindex{
+    padding: 8px;
+    height: 90px;
+}
+.divsingleblogindex span{
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* number of lines to show */
+            line-clamp: 3; 
+    -webkit-box-orient: vertical;
+    color: #000;
+    line-height: 22px;
+}
+.singleblogindex a{
+    color: #000;
+    text-decoration: none;
+}
+.chitietbaivietdiv{
+    background-color: #fff;
+    padding: 20px 10px;
+}
+.tieudebvc{
+    color: #000;
+}
+.ngaygiodangdiv{
+    margin-top: 20px;
+    display: flex;
+}
+#noidungbaiviet{
+    margin-top: 30px;
+}
+#noidungbaiviet img{
+    max-width: 100%;
+}
+.spuser{
+    margin-left: 20px;
+}
+.ngaygiodangdiv span{
+    color: #b3b3b3;
+}
+.tintuctieude{
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+.singlespnoibat{
+    margin-top: 25px;
+}
+.anhspnoibat{
+    width: 100%;
+}
+.tenspnoibat{
+    font-weight: bold;
+    color: #000;
+    text-decoration: none;
+}
+.newpricenoibat{
+    color: red;
+}
+.oldpricenoibat{
+    color: #333;
+    text-decoration: line-through;
+    font-size: 0.9rem;
+}
+.ndspnoibat{
+    position: relative;
+}
+.tintuctieude{
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+.baivietmoinhat{
+    position: relative;
+}
+.imgblogchinh{
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+.divtieudebvchinh{
+    position: absolute;
+    bottom: 0;
+    color: #fff;
+    background: rgba(15, 15, 15, 0.5);
+    width: 100%;
+    padding: 10px;
+    cursor: pointer;
+}
+.tieudebvchinh{
+    display: block;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+.nguoidangbvchinh{
+    font-size: 0.9rem;
+}
+.ngaydangbvchinh{
+    margin-left: 20px;
+    font-size: 0.9rem;
+}
+.singlebv{
+    margin-top: 15px;
+}
+.anhdsbaiviet{
+    width: 100%;
+}
+.anhdsbaiviet{
+    height: 120px;
+    object-fit: cover;
+    border-radius: 7px;
+}
+.ctnoidungdsbv{
+    position: relative;
+    height: 120px;
+}
+.tieudebv{
+    font-weight: bold;
+    font-size: 18px;
+    display: block;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* number of lines to show */
+            line-clamp: 2; 
+    -webkit-box-orient: vertical;
+}
+.motabaivietds{
+    color: #7d7d7d;
+    font-family: "Open Sans",Sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    display: block;
+    margin-top: 5px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1; /* number of lines to show */
+            line-clamp: 1; 
+    -webkit-box-orient: vertical;
+}
+.thongtinnguoidangbv{
+    position: absolute;
+    bottom: 0;
+}
+.nguoidangbv{
+    font-size: 0.8rem;
+    color: #7d7d7d;
+}
+.ngaydangbv{
+    font-size: 0.8rem;
+    color: #7d7d7d;
+    margin-left: 10px;
+}
+.tagas{
+    text-decoration: none;
+    color: #000;
+}
+.bgwhite{
+    background-color: #fff;
+    margin-top: 30px;
+}
+.pronamedetail{
+    margin: 20px 0 10px 0;
+    flex-basis: auto;
+    flex-grow: 3;
+    display: flex;
+}
+.imgprodetail{
+    width: 100%;
+}
+.listimgdetail {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.singdimg {
+    padding: 0px 5px 0px 10px;
+}
+
+.imgactive {
+    border: 2px solid #fcaf17;
+    border-radius: 3px;
+    padding: 2px;
+}
+.pricedetail {
+    margin-top: 5px;
+    color: rgb(23, 25, 28);
+    font-weight: 600;
+    font-size: 20px;
+    font-family: 'SVN-Gilroy Bold';
+    line-height: 22px;
+}
+.oldpricestr{
+    text-decoration: line-through;
+    margin-left: 10px;
+}
+.vats{
+    font-style: italic;
+}
+.divfreeship{
+    background-color: #ff813d;
+    color: #fff;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 4px;
+    margin-top: 15px;
+}
+.freeshipimg{
+    width: 30px;
+}
+.imgldetail {
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    object-fit: cover;
+    cursor: pointer;
+}
+.storagedetaillable{
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+    font-family: -apple-system,BlinkMacSystemFont,'Segoe UI';
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 5px;
+}
+.masanpham{
+    float: right;
+}
+.listsize {
+    margin-top: 10px;
+}
+
+.colorcdiv{
+    display: block;
+    position: relative;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #fff;
+    min-width: 100%;
+    text-align: center;
+    padding: 5px;
+    font-weight: 500;
+    border: 1px solid #bfbfbf;
+    border-radius: 5px ;
+}
+.hetsp{
+    background-color: #d6d6d6;
+    cursor: auto;
+}
+.activecolor{
+    border: 2px solid red !important;
+}
+.imgcolorpro{
+    width: 30%;
+}
+.phukiendikem{
+    font-size: 0.9rem;
+    color: #4f4e4e;
+}
+.btnmuahangngay{
+    margin-top: 15px;
+}
+.btnmuangay{
+    width: 80%;
+    float: left;
+    background: #ff0000;
+    box-shadow: 0 4px 6px #00000029;
+    border-radius: 10px;
+    color: #fff;
+    border: none;
+    padding-bottom: 10px;
+    height: 70px;
+}
+.btnthemgiohang{
+    width: 18%;
+    float: right;
+    background: #fff;
+    box-shadow: 0 4px 6px #00000029;
+    border: 2px solid #ff0000;
+    color: #ff0000;
+    border-radius: 10px;
+    height: 70px;
+    font-size: 9px;
+    font-weight: bold;
+    display: flex; /* Sử dụng Flexbox */
+    flex-direction: column; /* Đặt chiều hướng của flex là cột */
+    justify-content: center; /* Căn giữa theo chiều dọc */
+    align-items: center; 
+}
+.btnthemgiohang svg{
+    width: 22px;
+    height: 22px;
+    fill: #ff0000;
+    display: block;
+    text-align: center;
+}
+.phukiendikem{
+    font-size: 0.9rem;
+    color: #4f4e4e;
+}
+.motasanphamdetail{
+    background: #fff;
+    border-radius: 8px;
+    padding: 15px;
+    margin-top: 15px;
+}
+#descriptiondetail{
+    height: 300px;
+    overflow: hidden;
+    padding-bottom: 50px;
+}
+.divmore{
+    width: 100%;
+    height: 40px;
+}
+#lbxemthem{
+    display: block;
+    text-align: center;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 20px;
+}
+.phanhoisanpham{
+    background: #fff;
+    border-radius: 8px;
+    padding: 15px;
+    margin-top: 15px;
+}
+.singlectlct {
+    margin-top: 40px;
+}
+
+.nguoidangctl {
+    margin-bottom: 10px;
+}
+
+.avtuserdangctl {
+    width: 30px;
+}
+
+.usernamedangctl {
+    margin-left: 5px;
+    color: blue;
+}
+
+.ngaytraloi {
+    /* margin-left: auto; */
+    margin-left: 20px;
+    color: gray;
+}
+
+.slcautl {
+    color: blue;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.replaybinhluan {
+    margin-left: 5%;
+    margin-top: 15px;
+}
+
+.avtuserrepl {
+    width: 20px;
+    border-radius: 50%;
+    height: 20px;
+    margin-right: 5px;
+}
+
+.usernamerepl {
+    margin-right: 10px;
+    font-size: 0.9rem;
+}
+
+.ngaytraloispl {
+    margin-right: 10px;
+    font-size: 0.9rem;
+    color: gray;
+}
+
+.xoactlsp {
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: gray;
+    text-align: center;
+}
+
+.contentreplay {
+    word-break: break-word;
+    font-size: 14px;
+    color: #212b35;
+}
+
+.traloirpl {
+    cursor: pointer;
+    color: blue;
+    font-size: 0.9rem;
+    margin-right: 10px;
+}
+
+.singlereplay {
+    margin-top: 25px;
+}
+
+.singlectlct {
+    margin-top: 40px;
+}
+
+.traloivt {
+    text-decoration: none;
+}
+
+.listimgcontent {
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.listimgcontent img {
+    width: 15%;
+}
+
+.contentctlct {
+    word-break: break-word;
+    font-size: 14px;
+    color: #212b35;
+}
+
+.userrep {
+    color: blue;
+}
+
+.starcmts {
+    margin-left: 15px;
+    padding-top: 5px;
+}
+
+.pointer {
+    cursor: pointer;
+}
+.divchooseimg {
+    width: 100%;
+    border: 1px solid #ebebeb;
+    padding: 5px 0px 5px 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.divchooseimg span {
+    color: #969b9f;
+    font-weight: 500;
+}
+#choosefilecmt {
+    width: 0px;
+}
+
+#errorquan {
+    color: red;
+    font-size: 0.9rem;
+    display: none;
+}
+.checkedstar {
+    color: orange;
+}
+.titledes{
+    font-weight: bold;
+    font-size: 18px;
+}
+.cauhinhchitiet{
+    background: #fff;
+    border-radius: 14px;
+    flex: 0 0 380px;
+    padding: 15px;
+}
+.tieudesanpham{
+    font-size: 15px;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+.anhcauhinhsp{
+    width: 60%;
+    margin-left: 20%;
+    margin-top: 5px;
+}
+.thongtincauhinhdv{
+    margin-top: 15px;
+}
+.congnghect{
+    font-weight: bold;
+    font-size: 13px;
+    text-align: -webkit-match-parent;
+    margin-bottom: 10px;
+    display: block;
+}
+.chitietcongnghe{
+    font-weight: normal;
+}
+.singleproducts{
+    position: relative;
+}
+.contentsinglepro{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.productname{
+    text-decoration: none;
+    text-align: center;
+    color: #000;
+    font-weight: bold;
+    display: block;
+    font-size: 0.9rem;
+    overflow: hidden;
+   display: -webkit-box;
+   -webkit-line-clamp: 2; /* number of lines to show */
+           line-clamp: 2; 
+   -webkit-box-orient: vertical;
+}
+.productimglq{
+    width: auto;
+    height: 180px;
+    object-fit: cover;
+}
+.storagedetail{
+    font-size: 10px;
+}
+.positionrelative{
+    position: relative;
+}
+.btn-apdung{
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: none;
+    border: 1px solid #dd0302;
+    color: #dd0302;
+    border-radius: 10px;
+}
+.checkbox-custom {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+
+/* Hide the browser's default checkbox */
+
+.checkbox-custom input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+
+/* Create a custom checkbox */
+
+.checkmark-checkbox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 22px;
+    width: 22px;
+    /* background-color: #eee; */
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+
+/* On mouse-over, add a grey background color */
+
+.checkbox-custom:hover input~.checkmark-checkbox {
+    /* background-color: #ccc; */
+}
+
+
+/* When the checkbox is checked, add a blue background */
+
+.checkbox-custom input:checked~.checkmark-checkbox {
+    background-color: #ee4d2d;
+}
+
+
+/* Create the checkmark/indicator (hidden when not checked) */
+
+.checkmark-checkbox:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+
+/* Show the checkmark when checked */
+
+.checkbox-custom input:checked~.checkmark-checkbox:after {
+    display: block;
+}
+
+
+/* Style the checkmark/indicator */
+
+.checkbox-custom .checkmark-checkbox:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.lb-chon-danhmuc{
+    font-weight: 500;
+    margin-top: 10px;
+    margin-bottom: 7px;
+}
+.listsearchCategory{
+    padding-left: 10px;
+}
+.sliderprice {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.rangeprice {
+    -webkit-appearance: none;
+    width: 100%;
+    margin: 0;
+    position: absolute;
+    pointer-events: none;
+}
+
+.rangeprice::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 15px;
+    background: #ddd;
+    border-radius: 5px;
+}
+
+.rangeprice::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    background: #007bff;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative; /* Để tay cầm nằm trên track */
+    pointer-events: all; /* Cho phép sự kiện trên tay cầm */
+    z-index: 1; /* Đưa tay cầm lên trên */
+}
+
+/* Thêm styles cho tay cầm */
+.rangeprice::-moz-range-thumb {
+    width: 15px;
+    height: 15px;
+    background: #007bff;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative; /* Để tay cầm nằm trên track */
+}
+
+.price-range {
+    display: flex;
+    justify-content: space-between;
+}
+.selectfocus:focus{
+    box-shadow: none;
+}
+#toast-container > .toast-warning {
+    background-color: rgba(243, 156, 18, 1) !important; /* Thay đổi màu nền */
+    opacity: 1 !important; /* Đảm bảo không có độ trong suốt */
+}
+#toast-container > .toast-success {
+    background-color: rgba(40, 167, 69, 1) !important; /* Thay đổi màu nền */
+    opacity: 1 !important; /* Đảm bảo không có độ trong suốt */
+}
+.contentgiohang{
+    border-radius: 10px;
+    margin-top: 20px;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    -webkit-box-shadow: 0 0 10px #ddd;
+        box-shadow: 0 0 10px #ddd;
+}
+.tablecart td,
+tfoot,
+th,
+thead,
+tr {
+    border-style: none !important;
+}
+.imgprocart {
+    width: 100px;
+    float: left;
+}
+
+.divnamecart {
+    padding-left: 10px;
+    position: relative;
+    height: 100px;
+    margin-left: 100px;
+}
+
+.sizecart {
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+}
+
+.tdpricecart {
+    position: relative;
+    height: 100px;
+}
+.delcart {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: 20px;
+    cursor: pointer;
+}
+.nameprocart {
+    font-size: 15px;
+    color: #000;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.nameprocart:hover {
+    color: #ffc107;
+}
+.boldcart {
+    font-family: 'SVN-Gilroy Bold';
+    color: #000000;
+    font-weight: bold;
+}
+.clusinp {
+    width: 120px;
+}
+
+.facartde {
+    color: #30656b;
+    font-weight: 200;
+}
+.cartbtn {
+    line-height: 24px;
+    padding: 0;
+    margin: 0;
+    width: 37px;
+    background-color: #fff;
+    height: 36px;
+    float: left;
+    border: 1px solid #D9D9D9;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #62676D;
+    font-size: 20px;
+}
+
+.inputslcart {
+    line-height: 24px;
+    padding: 0;
+    margin: 0;
+    width: 37px;
+    background-color: #fff;
+    height: 36px;
+    float: left;
+    border: 1px solid #D9D9D9;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #62676D;
+    font-size: 20px;
+}
+.tongdon {
+    width: 100%;
+    height: 60px;
+    position: relative;
+}
+
+.btnthanhtoan {
+    position: absolute;
+    right: 0;
+    height: 40px;
+    background-color: #fcaf17;
+    color: #fff;
+    font-size: 16px;
+    font-family: 'SVN-Gilroy Bold';
+    border: none;
+    border-radius: 5px;
+    width: 120px;
+}
+
+.tonggiatien {
+    color: #000;
+    font-size: 1.1rem;
+    font-family: 'SVN-Gilroy Bold';
+    font-weight: bold;
+}
+
+.tds {
+    font-family: 'SVN-Gilroy Bold';
+    font-weight: 500;
+}
+.divtableover{
+    width: 100%;
+    overflow-x: scroll;
+}
+.lbthongtinnhanhang{
+    font-weight: 500;
+    font-size: 1.1rem;
+    display: block;
+    margin-bottom: 15px;
+}
+.lb-form{
+    display: block;
+    font-weight: 500;
+}
+.btndathang{
+    display: inline-block;
+    width: 100%;
+    padding: 10px 15px;
+    text-align: center;
+    background: linear-gradient(180deg, #f79429 0%, #f7712e 100%);
+    border-radius: .3em;
+    color: #fff;
+    box-sizing: border-box;
+    transition: 0.5s all ease;
+    margin-top: 30px;
+}
+.formthanhtoan{
+    margin-top: 10px;
+}
+.select2-container {
+    margin-top: 10px; 
+}
+.select2-container .select2-selection--single {
+    height: calc(2.25rem + 2px); /* Chiều cao giống với .form-control */
+    padding: 0.375rem 0.75rem; /* Padding giống với .form-control */
+    border: 1px solid #ced4da; /* Đường viền giống với .form-control */
+    border-radius: 0.25rem; /* Bo góc giống với .form-control */
+    background-color: #fff; /* Màu nền giống với .form-control */
+    font-size: 1rem; /* Cỡ chữ giống với .form-control */
+    line-height: 1.5; /* Dòng giống với .form-control */
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075); /* Hiệu ứng shadow giống với .form-control */
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    color: #495057; /* Màu chữ giống với .form-control */
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    height: 100%;
+    top: 0; /* Đặt mũi tên ở giữa */
+    right: 0.75rem; /* Khoảng cách bên phải */
+    border: none; /* Bỏ đường viền của mũi tên */
+}
+
+.tows {
+    position: absolute;
+    right: 10px;
+}
+
+.feevc .checkvc:checked {
+    /* -webkit-box-shadow: 0 0 0 15px #fcaf17 inset; */
+    height: 1rem;
+    padding-left: 1.5em;
+}
+
+.radiocustom {
+    display: block;
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+
+/* Hide the browser's default radio button */
+
+.radiocustom input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+
+/* Create a custom radio button */
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #eee;
+    border-radius: 50%;
+}
+
+
+/* On mouse-over, add a grey background color */
+
+.radiocustom:hover input~.checkmark {
+    background-color: #828282;
+}
+
+.radiocustom input~.checkmark {
+    background-color: #828282;
+}
+
+
+/* When the radio button is checked, add a blue background */
+
+.radiocustom input:checked~.checkmark {
+    background-color: #fcaf17;
+}
+
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+
+/* Show the indicator (dot/circle) when checked */
+
+.radiocustom input:checked~.checkmark:after {
+    display: block;
+}
+
+
+/* Style the indicator (dot/circle) */
+
+.radiocustom .checkmark:after {
+    top: 6px;
+    left: 6px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+}
+
+.momopay {
+    width: 30px;
+}
+
+.tablepay {
+    border: 1px solid #e0e0d1;
+    /* border-collapse:separate; 
+    border-spacing: 0 1em; */
+}
+
+.tablepay td {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    cursor: pointer;
+}
+
+.paycode {
+    font-size: 28px;
+    color: #fcaf17;
+}
+.magg {
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.btnmagg {
+    background-color: #fcaf17;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.colright {
+    text-align: right;
+}
+
+#blockmess {
+    display: none;
+}
+
+#messerr {
+    color: red;
+}
+
+#blockmessErr {
+    display: none;
+}
+.successvou {
+    color: green;
+    margin-top: 10px;
+    display: block;
+}
+.navleft, .navright{
+    background: #fff;
+    box-shadow: 0 3px 6px #00000029;
+    border-radius: 8px;
+    padding: 15px;
+    margin-top: 15px;
+}
+.activetabdv {
+    background-color: #FEEEE7;
+}
+.tabdv {
+    width: 100%;
+    height: 40px;
+    cursor: pointer;
+    padding-top: 5px;
+    padding-left: 20px;
+}
+
+.tabdv a {
+    color: #000;
+    text-decoration: none;
+    background: transparent;
+}
+
+.tabdv:hover {
+    background-color: #FEEEE7;
+}
+.headeraccount {
+    padding: 15px 20px 10px 20px;
+    border-bottom: 2px solid #f5f5f0;
+    margin-bottom: 20px;
+    position: relative;
+    min-height: 60px;
+}
+.headeraccount .right_flex {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.fontyel {
+    color: #fcaf17 !important;
+    font-family: 'SVN-Gilroy Bold';
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+.textrf {
+    color: #7A7A9D;
+    font-family: 'SVN-Gilroy';
+    line-height: 60px;
+    margin-right: 10px;
+}
+.thead-default {
+    background-color: #f8f8f8;
+    border-top: 1px solid #e0e0d1 !important;
+    border-bottom: 1px solid #e0e0d1 !important;
+}
+
+.thead-default th {
+    font-family: 'SVN-Gilroy Bold';
+    /* border: none; */
+    text-align: left;
+    line-height: 16px;
+    vertical-align: middle;
+}
+
+.thead-default td {
+    font-size: 0.9rem;
+}
+.yls {
+    color: #fcaf17;
+    font-size: 1rem;
+    font-weight: 600;
+}
+.pointer-event{
+    cursor: pointer;
+}
+#listinvoice{
+    font-size: 14px;
+}
+.imgdetailacc {
+    width: 100px;
+}
+.shipinfor {
+    margin-top: 30px;
+}
+
+.tennguoinhan {
+    font-weight: bold;
+}
+
+.blockinfor {
+    min-height: 120px;
+    padding: 13px 25px 10px 20px;
+    border: 1px solid #DDE1EF;
+    background: none;
+    margin-top: 10px;
+}
+
+.blockinfor span {
+    color: #212B25;
+    font-size: 14px;
+    line-height: 16px;
+    vertical-align: top;
+    text-align: left;
+}
+
+.ttshipinfor {
+    margin-top: 10px;
+}
+
+
+@media screen and (min-width: 992px) {
+    .col-lg-20p {
+        width: 20%;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .containercustom{
+        width: 100% !important;  /* Đặt độ rộng 100% khi trên màn hình điện thoại */
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+    .searchheader{
+        margin-left: 0px;
+        width: auto;
+    }
+}

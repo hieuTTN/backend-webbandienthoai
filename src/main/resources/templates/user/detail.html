@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="image/logo.ico">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.2/js/toastr.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="js/main.js"></script>
+    <script src="js/product.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/comment.js"></script>
+    <script src="js/banner.js"></script>
+    <script>
+        window.onload = function(){
+            loadMenu();
+            loadBanner();
+            loadAProduct();
+            loadProductComment();
+        }
+    </script>
+</head>
+<body>
+    <div id="menumain">
+    </div>
+    <div class="maincontentweb">
+        <div class="containercustom container">
+            <div class="container-fluid">
+                <div class="bannerhot1"></div>
+                <div class="bgwhite">
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <h4 class="pronamedetail" id="detailnamepro">Điện thoại Samsung Galaxy S23 Ultra 8GB/256GB - Chính hãng</h4>
+                            <div class="row">
+                                <div class="col-sm-5">
+                                    <img id="imgdetailpro" src="image/product1.webp" class="imgprodetail">
+                                    <div class="listimgdetail row" id="listimgdetail">
+                                    </div>
+                                </div>
+                                <div class="col-sm-7">
+                                    <div>
+                                        <strong class="newpricestr" id="pricedetail">9,690,000s ₫</strong>
+                                        <span class="oldpricestr" id="oldpricestr">19,990,000 ₫</span>
+                                        <span class="vats">| Giá đã bao gồm VAT</span>
+                                    </div>
+                                    <div class="divfreeship">
+                                        <i class="fa fa-truck"></i>
+                                        <span>MIỄN PHÍ VẬN CHUYỂN TOÀN QUỐC</span>
+                                    </div>
+                                    <span id="storagedetaillable" class="storagedetaillable">Lựa chọn màu sắc <span id="codepro" class="masanpham">sd</span></span>
+                                    <div class="listsize row" id="listcolor">
+
+                                    </div>
+                                    <span class="storagedetaillable">Phụ kiện đi kèm</span>
+                                    <span class="phukiendikem" id="phukiendikem">Hộp</span>
+                                    <div class="btnmuahangngay">
+                                        <button onclick="addCart('MUANGAY')" class="btnmuangay">Mua ngay <span class="lbgiaotannha">Giao tận nhà (COD) <br>Hoặc nhận tại cửa hàng</span></button>
+                                        <button onclick="addCart('ADD')" class="btnthemgiohang">
+                                            <svg width="30px" height="30px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve"> <g> <g> <path d="M471.467,234.667c-6.4-2.133-10.667,2.133-12.8,8.533l-8.533,36.267L138.667,320l-38.4-192h145.067    c6.4,0,10.667-4.267,10.667-10.667c0-6.4-4.267-10.667-10.667-10.667H96L85.333,51.2c0-4.267-6.4-8.533-10.667-8.533h-64    C4.267,42.667,0,46.934,0,53.333C0,59.733,4.267,64,10.667,64h55.467l51.2,260.267c6.4,34.133,38.4,59.733,72.533,59.733H435.2    c6.4,0,10.667-4.267,10.667-10.667c0-6.4-4.267-10.667-10.667-10.667H192c-17.067,0-34.133-8.533-42.667-23.467L460.8,296.533    c4.267,0,8.533-4.267,8.533-8.533L480,245.333C482.133,243.2,477.867,236.8,471.467,234.667z"></path> </g> </g> <g> <g> <path d="M181.333,405.333c-29.867,0-53.333,23.467-53.333,53.333S151.467,512,181.333,512c29.867,0,53.333-23.467,53.333-53.333    S211.2,405.333,181.333,405.333z M181.333,490.667c-17.067,0-32-14.934-32-32s14.933-32,32-32c17.067,0,32,14.934,32,32    S198.4,490.667,181.333,490.667z"></path> </g> </g> <g> <g> <path d="M437.333,106.667h-32v-32c0-6.4-4.267-10.667-10.667-10.667C388.267,64,384,68.267,384,74.667v32h-32    c-6.4,0-10.667,4.267-10.667,10.667c0,6.4,4.267,10.667,10.667,10.667h32v32c0,6.4,4.267,10.667,10.667,10.667    c6.4,0,10.667-4.267,10.667-10.667v-32h32c6.4,0,10.667-4.267,10.667-10.667C448,110.934,443.733,106.667,437.333,106.667z"></path> </g> </g> <g> <g> <path d="M394.667,405.333c-29.867,0-53.333,23.467-53.333,53.333S364.8,512,394.667,512C424.533,512,448,488.533,448,458.667    S424.533,405.333,394.667,405.333z M394.667,490.667c-17.067,0-32-14.934-32-32s14.933-32,32-32c17.067,0,32,14.934,32,32    S411.733,490.667,394.667,490.667z"></path> </g> </g> <g> <g> <path d="M394.667,0c-64,0-117.333,53.333-117.333,117.333s53.333,117.333,117.333,117.333S512,181.333,512,117.333    S458.667,0,394.667,0z M394.667,213.333c-53.333,0-96-42.667-96-96c0-53.333,42.667-96,96-96c53.333,0,96,42.667,96,96    C490.667,170.667,448,213.333,394.667,213.333z"></path> </g> </g> </svg>
+                                            <span>Thêm vào giỏ</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="motasanphamdetail">
+                                <div id="descriptiondetail"></div>
+                                <div class="divmore">
+                                    <span id="lbxemthem">Xem thêm</span>
+                                </div>
+                            </div>
+                            <div class="phanhoisanpham">
+                                <p class="titledes">Phản hổi</p>
+                                <div class="listcautlct" id="listcautlct">
+                                    <div class="singlectlct">
+                                        <div class="row">
+                                            <div class="col-11">
+                                                <div class="d-flex nguoidangctl">
+                                                    <img class="avtuserdangctl" src="image/avatar.png">
+                                                    <span class="usernamedangctl">Username</span>
+                                                    <span class="ngaytraloi">16-07-2023</span>
+                                                </div>
+                                                <div class="contentctlct">Mua với giá dùng thử 2tr6 thấy sản phẩm năm nay chất lượng đã cải tiến hơn nhiều, giao hàng cũng nhanh hơn. đặt ở web nên yên tâm không gặp lừa đảo hàng nhái vì mình bị gặp mấy lần rồi. cảm ơn shop!</div>
+                                                <div class="listimgcontent">
+                                                    <img src="image/product1.webp">
+                                                    <img src="image/product1.webp">
+                                                    <img src="image/product1.webp">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                
+                                <div class="col-sm-12 col-12" id="mycomment">
+                                    <div class="liststar" id="liststar">
+                                        <span onclick="loadStar(0)" class="fa fa-star checkedstar"></span>
+                                        <span onclick="loadStar(1)" class="fa fa-star checkedstar"></span>
+                                        <span onclick="loadStar(2)" class="fa fa-star checkedstar"></span>
+                                        <span onclick="loadStar(3)" class="fa fa-star checkedstar"></span>
+                                        <span onclick="loadStar(4)" class="fa fa-star checkedstar"></span>
+                                    </div>
+                
+                                    <label id="titlerep" class="lb-chon-danhmuc">Bình luận của bạn</label>
+                                    <textarea id="noidungbl" class="form-control"></textarea>
+                                    <div onclick="choosefilecmt.click()" class="divchooseimg">
+                                        <img src="image/addimg.png">
+                                        <span id="slfile">Đính kèm hình ảnh (chọn tối đa 3 hình)</span>
+                                        <span id="errorquan">Chỉ được chọn tối đa 3 ảnh</span>
+                                        <input onchange="setFile()" type="file" id="choosefilecmt" multiple>
+                                    </div>
+                                    <div id="loading">
+                                        <div class="bar1 bar"></div>
+                                    </div><br>
+                                    <button onclick="saveComment()" class="btn btn-primary form-control">Binh luận</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="cauhinhchitiet">
+                                <p class="tieudesanpham">Thông số kỹ thuật <span id="tenspkythuat">iPhone 12 (128GB) - Chính hãng VN/A</span></p>
+                                <img id="imganhkythuat" src="image/product1.webp" class="anhcauhinhsp">
+                                <div id="thongtincauhinh" class="thongtincauhinhdv">
+                                    <span class="congnghect">Công nghệ màn hình: <span class="chitietcongnghe">OLED</span></span>
+                                    <span class="congnghect">Hệ điều hành: <span class="chitietcongnghe">iOS 14</span></span>
+                                    <span class="congnghect">Vi xử lý: <span class="chitietcongnghe">Apple A14 Bionic 6 nhân</span></span>
+                                    <span class="congnghect">Mạng di động: <span class="chitietcongnghe">Hỗ trợ 5G</span></span>
+                                    <span class="congnghect">Số khe SIM: <span class="chitietcongnghe">1 Nano SIM & 1 eSIM</span></span>
+                                    <span class="congnghect">Tính năng đặc biệt <span class="chitietcongnghe">Kháng nước, kháng bụi IP68</span></span>
+                                    <span class="congnghect">Bảo mật <span class="chitietcongnghe">Mở khoá khuôn mặt Face ID</span></span>
+                                </div>
+                            </div>
+                            <div class="sanphamtuongtudetail">
+                                <p class="tieudesanpham">Sản phẩm tương tự</p>
+                                <div id="listsanphamlienquan" class="row">
+                                    <div class="col-md-6 col-sm-6 col-6">
+                                        <div class="singleproducts">
+                                            <a href=""><img src="image/product1.webp" class="productimg"></a>
+                                            <div class="contentsinglepro">
+                                                <p class="productname"><a class="productname" href="">Điện thoại iphone 11 promax (256gb)</a></p>
+                                                <div class="priceproduct">
+                                                    <strong class="newpricelq">9,690,000 ₫</strong>
+                                                    <span class="oldprice">19,990,000 ₫</span>
+                                                </div>
+                                            </div>
+                                            <button class="addcartbtndt">Giỏ hàng</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                   </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer" class="maincontentweb">
+    </div>
+</body>
+<script>
+    var check = true
+    document.getElementById("lbxemthem").onclick = function(){
+        if(check == true){
+            document.getElementById("descriptiondetail").style.height = '100%'
+            document.getElementById("lbxemthem").innerText = "Thu gọn";
+            check = false
+        }
+        else{
+            document.getElementById("descriptiondetail").style.height = '300px'
+            document.getElementById("lbxemthem").innerText = "Xem thêm";
+            check = true;
+        }
+    }
+</script>
+</html>

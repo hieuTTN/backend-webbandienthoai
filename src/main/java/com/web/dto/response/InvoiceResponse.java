@@ -1,5 +1,6 @@
 package com.web.dto.response;
 
+import com.web.entity.Wards;
 import com.web.enums.PayType;
 import com.web.enums.StatusInvoice;
 import lombok.Getter;
@@ -30,7 +31,7 @@ public class InvoiceResponse {
 
     private PayType payType;
 
-    private UserAdressResponse userAddress;
+    private Wards wards;
 
     private StatusInvoice statusInvoice;
 

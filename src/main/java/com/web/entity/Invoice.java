@@ -49,5 +49,8 @@ public class Invoice {
     private Voucher voucher;
 
     @ManyToOne
+    private Wards wards;
+
+    @ManyToOne
     private User user;
 }

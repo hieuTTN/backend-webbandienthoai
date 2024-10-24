@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="image/logo.ico">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.2/js/toastr.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.2/js/toastr.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="js/main.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/banner.js"></script>
+    <script src="js/product.js"></script>
+    <script src="js/address.js"></script>
+    <script src="js/checkout.js"></script>
+    <script src="js/user.js"></script>
+    <script>
+        window.onload = async function(){
+            await checkroleUser();
+            loadMenu();
+            loadBanner();
+            loadAllCart();
+            loadSanPhamNoiBatCart();
+            loadAddress();
+            loadThongTinUser();
+        }
+    </script>
+</head>
+<body>
+    <div id="menumain">
+    </div>
+    <div class="maincontentweb">
+        <div class="containercustom container">
+            <div class="container-fluid">
+                <div class="bannerhot1"></div>
+                <div class="row contentgiohang">
+                    <div class="col-sm-8">
+                        <p class="tintuctieude">Giỏ hàng <span class="soluonggiohang">(<span id="soluonggiohang"></span>) sản phẩm</span></p>
+                        <hr>
+                        <div class="divtableover">
+                            <table class="table tablecart">
+                                <tr>
+                                    <th>Sản phẩm</th>
+                                    <th>Đơn giá</th>
+                                    <th style="text-align: center;">Số lượng</th>
+                                    <th style="width: 100px;">Tổng tiền</th>
+                                </tr>
+                                <tbody id="listcartDes">
+    
+                                </tbody>
+                            </table>
+                        </div>
+                        <hr>
+                        <p class="tintuctieude">Gợi ý sản phẩm</p>
+                        <div id="goiysanpham" class="row">
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <span class="tds">Tổng đơn: </span><span class="tonggiatien" id="tonggiatien">14.299.000đ</span>
+                        <hr>
+                        <span class="lbthongtinnhanhang">Thông tin nhận hàng</span>
+                        <form action="javascript:checkout()">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <input class="form-control formthanhtoan" id="hoten" placeholder="Họ tên" required>
+                                </div>
+                                <div class="col-sm-6">
+                                    <input class="form-control formthanhtoan" id="sodienthoai" placeholder="Số điện thoại" required>
+                                </div>
+                            </div>
+                            <select onchange="loadHuyenOnchange()" id="tinh" class="form-control formthanhtoan">
+                               
+                            </select>
+                            <select onchange="loadXaOnchange()" id="huyen" class="form-control formthanhtoan">
+                                <option selected value="" hidden="">---</option>
+                            </select>
+                            <select id="xa" class="form-control formthanhtoan">
+                                <option value="" hidden="">---</option>
+                            </select>
+                            <input class="form-control formthanhtoan" id="tenduong" placeholder="Tên đường, số nhà" required>
+                            <textarea class="form-control formthanhtoan" id="ghichudonhang" rows="4" placeholder="Ghi chú đơn hàng"></textarea>
+                            <div class="row magg">
+                                <div class="col-8"><input id="codevoucher" class="form-control" placeholder="Nhập mã giảm giá"></div>
+                                <div class="col-4"><button onclick="loadVoucher()" type="button" class="btnmagg">Áp dụng</button></div>
+                                <div class="col-12" id="blockmess">
+                                    <span class="successvou">Mã giảm giá đã được áp dụng</span>
+                                </div>
+                                <div class="col-12" id="blockmessErr">
+                                    <br><i class="fa fa-warning"> <span id="messerr">Mã giảm giá không khả dụng</span></i>
+                                </div>
+                            </div>
+                            <table class="table tablepay">
+                                <tr onclick="momo.click()">
+                                    <td><label class="radiocustom">	Thanh toán qua Ví MoMo
+                                            <input value="momo" id="momo" type="radio" name="paytype" checked="checked">
+                                            <span class="checkmark"></span></label></td>
+                                    <td><img src="image/momo.webp" class="momopay"></td>
+                                </tr>
+                                <tr onclick="vnpay.click()">
+                                    <td><label class="radiocustom">	Thanh toán qua Ví Vnpay
+                                            <input value="vnpay" id="vnpay" type="radio" name="paytype">
+                                            <span class="checkmark"></span></label></td>
+                                    <td><img src="image/vnpay.jpg" class="momopay"></td>
+                                </tr>
+    
+                                <tr onclick="code.click()">
+                                    <td><label class="radiocustom">	Thanh toán khi nhận hàng (COD)
+                                            <input value="cod" id="code" type="radio" name="paytype">
+                                            <span class="checkmark"></span></label></td>
+                                    <td><i class="fa fa-money paycode"></i></td>
+                                </tr>
+                            </table>
+                            <button class="form-control btndathang">Xác nhận đặt hàng</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div style="height: 50px;"></div>
+        </div>
+    </div>
+    <div id="footer" class="maincontentweb">
+    </div>
+</body>
+</html>

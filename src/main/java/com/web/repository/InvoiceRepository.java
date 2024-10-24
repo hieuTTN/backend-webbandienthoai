@@ -50,4 +50,6 @@ public interface InvoiceRepository extends JpaRepository<Invoice,Long> {
     @Query("select i from Invoice i where i.createdDate >= ?1 and i.createdDate <= ?2 and i.payType = ?3 and i.statusInvoice = ?4")
     public Page<Invoice> findByDateAndPaytypeAndStatus(Date from, Date to, PayType payType,StatusInvoice status, Pageable pageable);
 
+    @Query("select count(i.id) from Invoice i where i.statusInvoice = ?1")
+    Long soDonByTrangThai(StatusInvoice statusInvoice);
 }

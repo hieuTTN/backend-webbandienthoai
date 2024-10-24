@@ -2,6 +2,7 @@ package com.web.api;
 
 import com.web.enums.StatusInvoice;
 import com.web.repository.InvoiceRepository;
+import com.web.repository.ProductColorRepository;
 import com.web.repository.ProductRepository;
 import com.web.repository.UserRepository;
 import com.web.utils.Contains;
@@ -26,6 +27,9 @@ public class StatiticsApi {
 
     @Autowired
     private ProductRepository productRepository;
+
+    @Autowired
+    private ProductColorRepository productColorRepository;
 
     @GetMapping("/admin/revenue-this-month")
     public Double doanhThuThangNay(){
@@ -59,6 +63,23 @@ public class StatiticsApi {
     @GetMapping("/admin/number-product")
     public Long numberProduct(){
         return productRepository.count();
+    }
+
+    @GetMapping("/admin/so-luong-ton-kho")
+    public Long tonKho(){
+        return productColorRepository.tongTonKho();
+    }
+
+    @GetMapping("/admin/ti-le-don")
+    public List<Long> donHuy(){
+        List<Long> list = new ArrayList<>();
+        Long soDonHuy = invoiceRepository.soDonByTrangThai(StatusInvoice.DA_HUY);
+        Long soDonThanh = invoiceRepository.soDonByTrangThai(StatusInvoice.DA_NHAN);
+        Long soDonKhongNhan = invoiceRepository.soDonByTrangThai(StatusInvoice.KHONG_NHAN_HANG);
+        list.add(soDonHuy);
+        list.add(soDonKhongNhan);
+        list.add(soDonThanh);
+        return list;
     }
 
     @GetMapping("/admin/revenue-year")

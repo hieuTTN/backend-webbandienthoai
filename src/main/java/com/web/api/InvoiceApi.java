@@ -73,4 +73,12 @@ public class InvoiceApi {
         InvoiceResponse result = invoiceService.timKiemDonHang(id, phone);
         return new ResponseEntity<>(result, HttpStatus.CREATED);
     }
+
+    @PostMapping("/user/cancel-invoice")
+    public ResponseEntity<?> cancelInvoice(@RequestParam("idInvoice") Long idInvoice){
+        InvoiceResponse result = invoiceService.cancelInvoice(idInvoice);
+        return new ResponseEntity<>(result, HttpStatus.CREATED);
+    }
+
+
 }

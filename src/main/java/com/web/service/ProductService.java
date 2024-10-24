@@ -238,4 +238,11 @@ public class ProductService {
         Page<Product> page = productRepository.sanPhamByThuongHieu(trademark, pageable);
         return page;
     }
+
+    public Page<Product> sanPhamByParam(String search, Pageable pageable) {
+        search = "%"+search+"%";
+        System.out.println(search);
+        Page<Product> page = productRepository.sanPhamByParam(search, pageable);
+        return page;
+    }
 }

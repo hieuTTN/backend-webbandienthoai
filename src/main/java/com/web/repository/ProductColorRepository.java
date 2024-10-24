@@ -10,4 +10,7 @@ public interface ProductColorRepository extends JpaRepository<ProductColor,Long>
 
     @Query("select p from ProductColor p where p.product.id = ?1")
     List<ProductColor> findByProduct(Long storage);
+
+    @Query("select sum(p.quantity) from ProductColor p")
+    Long tongTonKho();
 }

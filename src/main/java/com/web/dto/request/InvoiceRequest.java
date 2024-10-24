@@ -14,10 +14,20 @@ public class InvoiceRequest {
 
     private String orderIdMomo;
 
-    private Long userAddressId;
+    private String vnpOrderInfo;
 
     private String voucherCode;
 
+    private String receiverName;
+
+    private String phone;
+
+    private String address;
+
+    private String urlVnpay;
+
     private String note;
+
+    private Long wardId;
 
 }

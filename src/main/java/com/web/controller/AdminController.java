@@ -18,6 +18,11 @@ public class AdminController {
         return "admin/addproduct.html";
     }
 
+    @RequestMapping(value = {"/addtaikhoan"}, method = RequestMethod.GET)
+    public String addtaikhoan() {
+        return "admin/addtaikhoan.html";
+    }
+
     @RequestMapping(value = {"/addvoucher"}, method = RequestMethod.GET)
     public String addvoucher() {
         return "admin/addvoucher.html";
@@ -33,19 +38,9 @@ public class AdminController {
         return "admin/blog.html";
     }
 
-    @RequestMapping(value = {"/chat"}, method = RequestMethod.GET)
-    public String chat() {
-        return "admin/chat.html";
-    }
-
     @RequestMapping(value = {"/danhmuc"}, method = RequestMethod.GET)
     public String danhmuc() {
         return "admin/danhmuc.html";
-    }
-
-    @RequestMapping(value = {"/doanhthu"}, method = RequestMethod.GET)
-    public String doanhthu() {
-        return "admin/doanhthu.html";
     }
 
     @RequestMapping(value = {"/index"}, method = RequestMethod.GET)

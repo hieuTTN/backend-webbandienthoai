@@ -88,10 +88,17 @@ public class ProductApi {
         return new ResponseEntity<>(response, HttpStatus.CREATED);
     }
 
-    @GetMapping("/public/san-pham-by-thuong-hieu")
+    @GetMapping("/public/san-pham-by-thuong-hieu-hoac-search")
     public ResponseEntity<?> locSanPham(@RequestParam(value = "trademark", required = false) Long trademark,
+                                        @RequestParam(value = "search", required = false) String search,
                                         Pageable pageable) {
-        Page<Product> response = productService.sanPhamByThuongHieu(trademark, pageable);
+        Page<Product> response = null;
+        if(trademark != null){
+            response = productService.sanPhamByThuongHieu(trademark, pageable);
+        }
+        if(search != null){
+            response = productService.sanPhamByParam(search, pageable);
+        }
         return new ResponseEntity<>(response, HttpStatus.CREATED);
     }
 

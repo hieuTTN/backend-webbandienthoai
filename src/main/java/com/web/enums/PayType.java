@@ -9,6 +9,7 @@ import lombok.Getter;
 public enum PayType {
 
     MOMO,
-    COD;
+    COD,
+    VNPAY;
 
 }

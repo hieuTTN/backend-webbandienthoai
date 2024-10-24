@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="image/logo.ico">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.2/js/toastr.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="js/main.js"></script>
+    <script src="js/trademark.js"></script>
+    <script src="js/product.js"></script>
+    <script src="js/category.js"></script>
+    <script src="js/banner.js"></script>
+    <script>
+        window.onload = function(){
+            loadMenu();
+            loadBanner();
+            loadCategoryCheckBox();
+            loadTrademarkCheckBox();
+            var uls = new URL(document.URL)
+            var thuonghieu = uls.searchParams.get("thuonghieu");
+            var search = uls.searchParams.get("search");
+            if(thuonghieu == null && search == null){
+                locSanPham(0);
+            }
+            else{
+                sanPhamByThuongHieu(0);
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="menumain">
+    </div>
+    <div class="maincontentweb">
+        <div class="containercustom container">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-7">
+                        <div id="carouselExampleControls" class="carousel slide bannerindex" data-bs-ride="carousel">
+                            <div id="carouselindex">
+                                <div class="carousel-inner carousel-inner-index">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="bannerhot1 bannerrighttopindex"></div>
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="bannerhot1 bannerrighttopindex bannerrighttopindex1"></div>
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="bannerhot1 bannerrighttopindex bannerrighttopindex1"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bannerhot1" style="margin-top: 10px;"></div>
+                <div class="row" style="margin-top: 20px;">
+                    <div class="col-sm-3">
+                        <div class="chitietbaivietdiv">
+                            <div class="positionrelative">
+                                <p class="tintuctieude">Lọc sản phẩm</p>
+                                <button onclick="locSanPham(0)" class="btn-apdung">Áp dụng</button>
+                            </div>
+                            <hr>
+                            <label class="lb-chon-danhmuc">Chọn khoảng giá</label>
+                            <select class="form-control selectfocus" id="khoanggia">
+                                <option value="0-100000000">Tất cả khoảng giá</option>
+                                <option value="0-999999">Dưới 1 triệu</option>
+                                <option value="1000000-2000000">Từ 1-2 triệu</option>
+                                <option value="2000000-4000000">Từ 2-4 triệu</option>
+                                <option value="4000000-6000000">Từ 4-6 triệu</option>
+                                <option value="6000000-9000000">Từ 6-9 triệu</option>
+                                <option value="9000000-12000000">Từ 9-12 triệu</option>
+                                <option value="12000000-18000000">Từ 12-18 triệu</option>
+                                <option value="18000000-180000000">Trên 18 triệu</option>
+                            </select>
+                            <label class="lb-chon-danhmuc">Sắp xếp theo</label>
+                            <select class="form-control selectfocus" id="sortpro">
+                                <option value="id,asc">Mới nhất</option>
+                                <option value="price,asc">Rẻ nhất</option>
+                                <option value="price,desc">Giá giảm dần</option>
+                                <option value="quantitySold,desc">Mua nhiều nhất</option>
+                            </select>
+                            <label class="lb-chon-danhmuc">Chọn danh mục</label>
+                            <div class="listsearchCategory" id="listsearchCategory">
+                            </div>
+                            <label class="lb-chon-danhmuc">Chọn thương hiệu</label>
+                            <div class="listsearchCategory" id="listthuonghieu">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-9">
+                        <div class="row" id="sanphamloc">
+
+                        </div>
+                        <nav aria-label="Page navigation example" style="margin-top: 30px;">
+                            <ul class="pagination" id="pageable">
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer" class="maincontentweb">
+    </div>
+</body>
+</html>
